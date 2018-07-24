@@ -1,0 +1,15 @@
+Nicholas Patience U07985691
+Nickspatience@gmail.com
+C/C++ Programming I : Fundamental Programming Concepts
+132297 Ray Mitchell
+07/17/2018
+C1A1E0_Quiz.txt
+Quiz Answers
+DO NOT COPY OR RESTATE MY INSTRUCTIONS IN THE TITLE BLOCK OR ANYWHERE ELSE.
+
+1. D
+2. B
+3. A
+4. C
+5. B
+6. A
