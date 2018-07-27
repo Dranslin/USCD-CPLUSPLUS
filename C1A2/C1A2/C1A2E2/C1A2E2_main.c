@@ -25,7 +25,7 @@ int main(void)
     int outputNumber;
 
     printf("Please enter any positive decimal integer value: \n");
-    scanf_s("%i", &userInput);
+    scanf("%i", &userInput);
     outputNumber = userInput;
 
     for (int verticalLineCount = 0; verticalLineCount < userInput; verticalLineCount++)

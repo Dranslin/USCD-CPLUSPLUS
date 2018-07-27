@@ -12,27 +12,22 @@
  */
 
 #include <stdio.h>
-#include <ctype.h>
 
 int main(void)
 {
     int userInputNumber;
     short total = 0;
 
-    do
-    {
-        printf("Please enter a positive value that is either zero, or greater than zero.\n");
-        scanf_s("\n%i", &userInputNumber);
-        printf("User has entered: %d\n", userInputNumber);
-    }
-    while (!(userInputNumber >= 0));
+    printf("Please enter a positive value that is either zero, or greater than zero.\n");
+    scanf("%i", &userInputNumber);
+    printf("User has entered: %d\n", userInputNumber);
 
-    printf("nbr    cubic sum\n");
-    printf("_________________\n");
-    for (int currentSquare = 0; currentSquare <= userInputNumber; currentSquare++)
+    printf("nbr cubic sum\n_________________\n");
+    //Begin cube calculation and printing
+    for (int currentCube = 0; currentCube <= userInputNumber; currentCube++)
     {
-        total += currentSquare * currentSquare * currentSquare;
-        printf("%-3d    %-10d\n", currentSquare, total);
+        total += (short)(currentCube * currentCube * currentCube);
+        printf("%-3d %10d\n", currentCube, total);
     }
 
     return 0;
