@@ -20,45 +20,49 @@ using std::hex;
 void printWord(int testInt);
 
 const int DIVISOR = 16;
-const int MAX = 15;
+const int MAX = DIVISOR - 1;
 
-int main()
+int main() // Input hex from user and print out word equivalent
 {
-    int userHex;
+    int userInput;
     int divisorValue = 1; // bottom
 
-    cout << "Please write a number in hexidecimal.\n";
-    cin >> hex >> userHex;
+    cout << "Please write a number in hexadecimal.\n";
+    cin >> hex;
+    cout << hex;
 
-    if (userHex < 0)
+    cin >> userInput;
+
+    if (userInput < 0)
     {
-        cout << "\"-" << hex << -userHex << "\" in words is \"";
+        cout << "\"-" << -userInput << "\" in words is \"";
     }
     else
     {
-        cout << "\"" << hex << userHex << "\" in words is \"";
+        cout << "\"" << userInput << "\" in words is \"";
     }
 
-    // if negitive, print minus and convert to positive
-    if (userHex < 0)
+    // if negative, print minus and convert to positive
+    if (userInput < 0)
     {
-        cout << "minus";
-        userHex = -userHex;
+        cout << "minus ";
+        userInput = -userInput;
     }
 
-    if (userHex > MAX)
+    // Algorithim for extracting most significant digit from 16-bit.
+    if (userInput > MAX)
     {
-        for (int dividendValueLoop = userHex; dividendValueLoop > MAX; dividendValueLoop /= DIVISOR)
+        for (int dividendValueLoop = userInput; dividendValueLoop > MAX; dividendValueLoop /= DIVISOR)
         {
             divisorValue *= DIVISOR;
         }
 
-        int dividendValue = userHex;
-        int mostSigDigit;
+        int dividendValue = userInput;
         do
         {
+            int mostSigDigit;
             mostSigDigit = dividendValue / divisorValue;
-            printWord(mostSigDigit);
+            printWord(mostSigDigit); // switch statement prints word
 
             dividendValue -= mostSigDigit * divisorValue;
             divisorValue /= DIVISOR;
@@ -66,7 +70,7 @@ int main()
     }
     else
     {
-        printWord(userHex);
+        printWord(userInput);
     }
 
     cout << "\"\n";
@@ -74,58 +78,58 @@ int main()
     return 0;
 }
 
-
+// Function used to encapsulate the switch statement that prints the word
 void printWord(int testInt)
 {
     switch (testInt)
     {
         case 1:
-            cout << " one";
+            cout << "one ";
             break;
         case 2:
-            cout << " two";
+            cout << "two ";
             break;
         case 3:
-            cout << " three";
+            cout << "three ";
             break;
         case 4:
-            cout << " four";
+            cout << "four ";
             break;
         case 5:
-            cout << " five";
+            cout << "five ";
             break;
         case 6:
-            cout << " six";
+            cout << "six ";
             break;
         case 7:
-            cout << " seven";
+            cout << "seven ";
             break;
         case 8:
-            cout << " eight";
+            cout << "eight ";
             break;
         case 9:
-            cout << " nine";
+            cout << "nine ";
             break;
         case 10:
-            cout << " A";
+            cout << "A ";
             break;
         case 11:
-            cout << " B";
+            cout << "B ";
             break;
         case 12:
-            cout << " C";
+            cout << "C ";
             break;
         case 13:
-            cout << " D";
+            cout << "D ";
             break;
         case 14:
-            cout << " E";
+            cout << "E ";
             break;
         case 15:
-            cout << " F";
+            cout << "F ";
             break;
         case 0:
-            cout << " Zero";
+            cout << "Zero ";
             break;
     }
 }
