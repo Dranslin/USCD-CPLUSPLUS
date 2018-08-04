@@ -1,15 +1,15 @@
 /*
-* Nicholas Patience U07985691
-* Nickspatience@gmail.com
-* C/C++ Programming I : Fundamental Programming Concepts
-* 132297 Ray Mitchell
-* 08/04/2018
-* C1A4E2_main.cpp
-* Win 10
-* Visual C++ 2017
-*
-* Computes minimum value of two.
-*/
+ * Nicholas Patience U07985691
+ * Nickspatience@gmail.com
+ * C/C++ Programming I : Fundamental Programming Concepts
+ * 132297 Ray Mitchell
+ * 08/04/2018
+ * C1A4E2_main.cpp
+ * Win 10
+ * Visual C++ 2017
+ *
+ * Computes minimum value of two.
+ */
 
 #include <iostream>
 
@@ -17,10 +17,10 @@ const int CYCLES = 5;
 using std::cout;
 using std::cin;
 
-extern void PrintLines(int userCharacter, int charOnLine, int charRows);
-extern void PrintLines(int userCharacter, int charOnLine);
-extern void PrintLines(int userCharacter);
-extern void PrintLines();
+void PrintLines(int userCharacter, int charOnLine, int charRows);
+void PrintLines(int userCharacter, int charOnLine);
+void PrintLines(int userCharacter);
+void PrintLines();
 
 int main()
 {
