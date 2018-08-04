@@ -1,0 +1,6 @@
+﻿  C1A4E1_main.c
+c:\ucsd\c++ projects\uscd-cplusplus\c1a4\c1a4e1_retest\c1a4e1_main.c(24): warning C4477: 'scanf' : format string '%f' requires an argument of type 'float *', but variadic argument 1 has type 'double *'
+  c:\ucsd\c++ projects\uscd-cplusplus\c1a4\c1a4e1_retest\c1a4e1_main.c(24): note: consider using '%lf' in the format string
+c:\ucsd\c++ projects\uscd-cplusplus\c1a4\c1a4e1_retest\c1a4e1_main.c(24): warning C4477: 'scanf' : format string '%f' requires an argument of type 'float *', but variadic argument 2 has type 'double *'
+  c:\ucsd\c++ projects\uscd-cplusplus\c1a4\c1a4e1_retest\c1a4e1_main.c(24): note: consider using '%lf' in the format string
+  C1A4E1_Retest.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C1A4\Debug\C1A4E1_Retest.exe
