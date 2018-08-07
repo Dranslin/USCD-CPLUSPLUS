@@ -11,8 +11,6 @@
 * Computes minimum value of two.
 */
 
-#include "C1A4E3_PrintLines.h"
-
 void printLines(int valueDisplayed, int valueInLine, int valueInRow)
 {
     for (int rowCounter = 0; rowCounter < valueInRow; rowCounter++)
