@@ -14,19 +14,20 @@
 #include <stdio.h>
 
 #define MAX_RESPONDENTS 20
-#define MIN_RESPONSE_VALUE (5)
-#define MAX_RESPONSE_VALUE (10)
-#define ABS(x) ((x < 0) ? (-(x)) : (x))
-#define RESPONSE_VALUES ((1 + (MAX_RESPONSE_VALUE) - (MIN_RESPONSE_VALUE)))
+#define MIN_RESPONSE_VALUE 5
+#define MAX_RESPONSE_VALUE 10
+#define RESPONSE_VALUES (1 + MAX_RESPONSE_VALUE - MIN_RESPONSE_VALUE)
 #define OUT_OF_RANGE_LIMIT 5
 
 int main(void)
 {
     int consecutiveRangeErrors = 0;
     int ratingResponses[RESPONSE_VALUES] = {0};
-    int currentResponse = 0;
 
-    do
+    // Until Max Respondents or Out of Range limit reached
+    // Keep taking in new ratings.
+    for (int currentResponse = 0; (currentResponse < MAX_RESPONDENTS) &&
+        (consecutiveRangeErrors < OUT_OF_RANGE_LIMIT); currentResponse++)
     {
         int userRating;
         printf("Please enter a rating to give:\n");
@@ -46,19 +47,17 @@ int main(void)
             currentResponse++;
             ratingResponses[userRating - MIN_RESPONSE_VALUE] += 1;
         }
-
-     // Until exceeding number of responses or repeated errors
-    } while ((currentResponse < MAX_RESPONDENTS) && (consecutiveRangeErrors < OUT_OF_RANGE_LIMIT));
-
-    printf("Rating Responses\n");
+    }
+    
+    printf("Rating Responses\n------ ---------\n");
 
     int outputIndex = MAX_RESPONSE_VALUE;
 
     // Print results starting with highest value and going down
-    for (int i = RESPONSE_VALUES - 1; i >= 0; i--)
+    for (int indexCounter = RESPONSE_VALUES - 1; indexCounter >= 0; indexCounter--)
     {
-        printf("%i %i\n", outputIndex--, ratingResponses[i]);
+        printf("%5i %6i\n", outputIndex--, ratingResponses[indexCounter]);
     }
-
+     
     return 0;
 }

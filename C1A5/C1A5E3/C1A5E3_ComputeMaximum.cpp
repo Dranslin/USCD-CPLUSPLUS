@@ -13,5 +13,5 @@
 
 double *ComputeMaximum(const double *valueOne, const double *valueTwo)
 {
-    return (double *)(valueOne >= valueTwo ? valueOne : valueTwo);
+    return (double *)(*valueOne >= *valueTwo ? valueOne : valueTwo);
 }
