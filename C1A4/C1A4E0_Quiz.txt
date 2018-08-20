@@ -6,9 +6,9 @@ C/C++ Programming I : Fundamental Programming Concepts
 C1A4E0_Quiz.txt
 Quiz Answers
 
-1. 
-2. 
-3. 
-4. 
-5. 
-6. 
+1. A
+2. C
+3. C
+4. C
+5. E
+6. A
