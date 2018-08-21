@@ -13,11 +13,11 @@
 
 #include <stdio.h>
 
-#define MAX_RESPONDENTS 20
-#define MIN_RESPONSE_VALUE 5
-#define MAX_RESPONSE_VALUE 10
+#define MAX_RESPONDENTS 17
+#define MIN_RESPONSE_VALUE (-27)
+#define MAX_RESPONSE_VALUE 9
 #define RESPONSE_VALUES (1 + MAX_RESPONSE_VALUE - MIN_RESPONSE_VALUE)
-#define OUT_OF_RANGE_LIMIT 5
+#define OUT_OF_RANGE_LIMIT 2
 
 int main(void)
 {
@@ -27,7 +27,7 @@ int main(void)
     // Until Max Respondents or Out of Range limit reached
     // Keep taking in new ratings.
     for (int currentResponse = 0; (currentResponse < MAX_RESPONDENTS) &&
-        (consecutiveRangeErrors < OUT_OF_RANGE_LIMIT); currentResponse++)
+        (consecutiveRangeErrors < OUT_OF_RANGE_LIMIT);)
     {
         int userRating;
         printf("Please enter a rating to give:\n");
