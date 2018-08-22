@@ -29,12 +29,12 @@ int main(void)
     fgets(bufferTwo, STR_LENGTH, stdin);
 
     // Removing newline character from bufferOne
-    int length = strlen(bufferOne);
+    int length = (int)strlen(bufferOne);
     if (length != 0 && bufferOne[length - 1] == '\n')
         bufferOne[--length] = '\0';
 
     // Removing newline character from bufferTwo
-    length = strlen(bufferTwo);
+    length = (int)strlen(bufferTwo);
     if (length != 0 && bufferTwo[length - 1] == '\n')
         bufferTwo[--length] = '\0';
 

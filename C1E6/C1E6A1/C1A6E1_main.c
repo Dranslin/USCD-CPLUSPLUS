@@ -26,11 +26,13 @@ int main(void)
     fgets(buffer, STR_LENGTH, stdin);
 
     // Used to remove the new line character    
-    int length = strlen(buffer);
+    int length = (int)strlen(buffer);
     if (length != 0 && buffer[length - 1] == '\n')
         buffer[--length] = '\0';
 
+    // Standard library use of strlen to print length of string
     printf("strlen(\"%s\") returned %i\n", buffer, (int)strlen(buffer));
+    // Assignment created strlen function to print length of string
     printf("MyStrlen(\"%s\") returned %i\n", buffer, (int)MyStrlen(buffer));
 
     return 0;

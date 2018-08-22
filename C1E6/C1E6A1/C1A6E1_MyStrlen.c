@@ -16,9 +16,11 @@
 
 size_t MyStrlen(const char *s1)
 {
-    int index;
-    // Traverses along the string until null character
-    for (index = 0; s1[index] != '\0'; index++)
+    const char * const holder = s1; // Holds start position of string
+
+    // Moves address of s1 along the string, used to count length
+    for (; *s1 != '\0'; s1++)
         ;
-    return (size_t)(index);
+
+    return (size_t)(s1 - holder);
 }

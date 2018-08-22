@@ -14,14 +14,8 @@
 
 int MyStrcmp(const char *s1, const char *s2)
 {
-    int result = 0;
-
     // Continues until a mismatch is found or null character is found. 
-    for (int index = 0; (s1[index] != '\0') && (s2[index] != '\0') && (result == 0); index++)
-    {
-        // Anything other than a 0 will cause the next iteration to be skipped
-        result = s1[index] - s2[index];
-    }
-
-    return result;
+    for (; (*s1 == *s2) && (*s1 != '\0') && (*s2 != '\0'); s1++, s2++)
+        ;
+    return (int)*s1 - *s2;
 }
