@@ -22,44 +22,47 @@ const int MINUTESECONDMOD = 60;
 MyTime *DetermineElapsedTime(const MyTime *startTime, const MyTime *endTime)
 {
     static MyTime resultTime = {0, 0, 0};
+    long startTimeConvert = startTime->hours * MINUTESECONDMOD * MINUTESECONDMOD +
+        startTime->minutes * MINUTESECONDMOD + startTime->seconds;
+    long endTimeConvert = endTime->hours * MINUTESECONDMOD * MINUTESECONDMOD +
+        endTime->minutes * MINUTESECONDMOD + endTime->seconds;
 
-    // If times are the same, then set 24 hours worth of difference.
+    // If times are the same, or if the total start time is larger than the end time
+    // then set 24 hours worth of difference.
     if ((startTime->hours == endTime->hours) && 
         (startTime->minutes == endTime->minutes) && 
-        (startTime->seconds == endTime->seconds))
+        (startTime->seconds == endTime->seconds) ||
+        (startTimeConvert > endTimeConvert))
     {
         resultTime.hours = DAY;
-        resultTime.minutes = 0;
-        resultTime.seconds = 0;
     }
-    else
-    {
-        // Check if end time seconds larger than start time seconds
-        // If so, pull one minute worth, then calculate seconds difference.
-        if (startTime->seconds < endTime->seconds)
-        {
-            resultTime.minutes--;
-            resultTime.seconds += MINUTESECONDMOD;
-        }
-        resultTime.seconds += startTime->seconds - endTime->seconds;
 
-        // Check if end time minutes larger than start time minutes
-        // If so, pull one hour worth, then calculate minutes difference.
-        if (startTime->minutes + resultTime.minutes < endTime->minutes)
-        {
-            resultTime.hours--;
-            resultTime.minutes += MINUTESECONDMOD;
-        }
-        resultTime.minutes += startTime->minutes - endTime->minutes;
-        
-        // Check if end time hours is larger than start time hours
-        // If so, pull one day's worth of hours, then computer difference.
-        if (startTime->hours + resultTime.hours < endTime->hours)
-        {
-            resultTime.hours += DAY;
-        }
-        resultTime.hours += startTime->hours - endTime->hours;
+    // Check if start time seconds larger than end time seconds
+    // If so, pull one minute worth, then calculate seconds difference.
+    if (endTime->seconds < startTime->seconds) //
+    {
+        resultTime.minutes--;
+        resultTime.seconds += MINUTESECONDMOD;
     }
+    resultTime.seconds += endTime->seconds - startTime->seconds;
+
+    // Check if start time minutes larger than end time minutes
+    // If so, pull one hour worth, then calculate minutes difference.
+    if (endTime->minutes + resultTime.minutes < startTime->minutes)
+    {
+        resultTime.hours--;
+        resultTime.minutes += MINUTESECONDMOD;
+    }
+    resultTime.minutes += endTime->minutes - startTime->minutes;
+        
+    // Check if start time hours is larger than end time hours
+    // If so, pull one day's worth of hours, then computer difference.
+    if (endTime->hours + resultTime.hours < startTime->hours)
+    {
+        resultTime.hours += DAY;
+    }
+    resultTime.hours += endTime->hours - startTime->hours;
+
 
     return &resultTime;
 }

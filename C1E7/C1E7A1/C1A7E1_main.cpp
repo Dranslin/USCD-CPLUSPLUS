@@ -35,27 +35,13 @@ int main()
         userTimeOne.seconds >> userTimeTwo.hours >> delimOne >>
         userTimeTwo.minutes >> delimTwo >> userTimeTwo.seconds;
 
-    //cout << "Values are userTimeOne - Hours: " << userTimeOne.hours <<
-    //    " Minutes: " << userTimeOne.minutes << " Seconds: " << userTimeOne.seconds;
-    //cout << "\nValues are userTimeTwo - Hours: " << userTimeTwo.hours <<
-    //    " Minutes: " << userTimeTwo.minutes << " Seconds: " << userTimeTwo.seconds << "\n";
     utr = DetermineElapsedTime(&userTimeOne, &userTimeTwo);
 
-    //cout << "The time elapsed from " << setfill('0') << setw(2) << 
-    //    userTimeOne.hours << delimOne << setfill('0') << setw(2) <<
-    //    userTimeOne.minutes << delimTwo << setfill('0') << setw(2) <<
-    //    userTimeOne.seconds << " to " << setfill('0') << setw(2) << 
-    //    userTimeTwo.hours << delimOne << setfill('0') << setw(2) <<
-    //    userTimeTwo.minutes << delimTwo << setfill('0') << setw(2) <<
-    //    userTimeTwo.seconds << " is " << setfill('0') << setw(2) << 
-    //    utr->hours << delimOne << setfill('0') << setw(2) <<
-    //    utr->minutes << delimTwo << setfill('0') << setw(2) <<
-    //    utr->seconds << "\n";
-    cout << "The time elapsed from " << setfill('0') << setw(2)<< userTimeOne.hours << 
+    cout << setfill('0') << setw(2) << "The time elapsed from " << userTimeOne.hours <<
         delimOne << userTimeOne.minutes << delimTwo << userTimeOne.seconds << " to " 
         << userTimeTwo.hours << delimOne << userTimeTwo.minutes << delimTwo << 
         userTimeTwo.seconds << " is " << utr->hours << delimOne << utr->minutes << 
-        delimTwo << utr->seconds;
+        delimTwo << utr->seconds << "\n";
 
     return 0;
 }
