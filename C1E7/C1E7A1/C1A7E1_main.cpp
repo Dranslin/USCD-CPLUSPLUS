@@ -19,6 +19,8 @@
 #include "C1A7E1_MyTime.h"
 
 MyTime *DetermineElapsedTime(const MyTime *startTime, const MyTime *endTime);
+const int STARTRUN = 0;
+const int ENDRUN = 0;
 
 using std::cout;
 using std::cin;
@@ -30,18 +32,20 @@ int main()
     MyTime userTimeOne, userTimeTwo, *utr;
     char delimOne, delimTwo;
 
-    cout << "Enter two times in HH:MM:SS format, separated by a space.\n";
-    cin >> userTimeOne.hours >> delimOne >> userTimeOne.minutes >> delimTwo >>
-        userTimeOne.seconds >> userTimeTwo.hours >> delimOne >>
-        userTimeTwo.minutes >> delimTwo >> userTimeTwo.seconds;
+    for (int timesRun = STARTRUN; timesRun <= ENDRUN; timesRun++)
+    {
+        cout << "Enter two times in HH:MM:SS format, separated by a space.\n";
+        cin >> userTimeOne.hours >> delimOne >> userTimeOne.minutes >> delimTwo >>
+            userTimeOne.seconds >> userTimeTwo.hours >> delimOne >>
+            userTimeTwo.minutes >> delimTwo >> userTimeTwo.seconds;
 
-    utr = DetermineElapsedTime(&userTimeOne, &userTimeTwo);
+        utr = DetermineElapsedTime(&userTimeOne, &userTimeTwo);
 
-    cout << setfill('0') << setw(2) << "The time elapsed from " << userTimeOne.hours <<
-        delimOne << userTimeOne.minutes << delimTwo << userTimeOne.seconds << " to " 
-        << userTimeTwo.hours << delimOne << userTimeTwo.minutes << delimTwo << 
-        userTimeTwo.seconds << " is " << utr->hours << delimOne << utr->minutes << 
-        delimTwo << utr->seconds << "\n";
-
+        cout << setfill('0') << setw(2) << "The time elapsed from " << userTimeOne.hours <<
+            delimOne << userTimeOne.minutes << delimTwo << userTimeOne.seconds << " to "
+            << userTimeTwo.hours << delimOne << userTimeTwo.minutes << delimTwo <<
+            userTimeTwo.seconds << " is " << utr->hours << delimOne << utr->minutes <<
+            delimTwo << utr->seconds << "\n";
+    }
     return 0;
 }

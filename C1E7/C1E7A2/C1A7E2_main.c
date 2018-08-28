@@ -22,6 +22,9 @@
 #define LUNCH_ITEMS 10
 #define BUFFERLENGTH 128
 #define STARTINDEX 2
+#define NAMESPACER 10
+#define WEIGHTSPACER 4
+#define CALORIESPACER 4
 
 int main(void)
 {
@@ -36,9 +39,10 @@ int main(void)
     // Fill in rest of the lunch array
     for (int index = 0; index < LUNCH_ITEMS; index++)
     {
-        size_t cStringLength = 0;
+        //size_t cStringLength = 0;
         if (index >= STARTINDEX)
         {
+            size_t cStringLength = 0;
             char buffer[BUFFERLENGTH]; // Captures c-string input
             
             printf("Please enter data to fill the lunch structure.\nFor each entry"
@@ -61,26 +65,24 @@ int main(void)
                 lunch[index].name = namePtr;
             }
         }
-
-        // get necessary alignment space based off longest length value for each variable in struct
-        int lsCurrentName = (int)cStringLength;
-        //int lsCurrentName = (int)strlen(lunch[index].name);     // # of characters for name
-        int lsCurrentCal = (int)floor(log10(lunch[index].calories)) + 1;    // # of digits for cal
-        int lsCurrentWeight = (int)floor(log10(lunch[index].weight)) + 1;  // # of digits for weight
-        // # chars for name and # of digits for weight
-        if (lsName < lsCurrentName) 
-            lsName = lsCurrentName;
-        if (lsWeight < lsCurrentWeight) 
-            lsWeight = lsCurrentWeight;
-        if (lsCalories < lsCurrentCal) 
-            lsCalories = lsCurrentCal;
+        //// get necessary alignment space based off longest length value for each variable in struct
+        //int lsCurrentName = (int)cStringLength;
+        ////int lsCurrentName = (int)strlen(lunch[index].name);     // # of characters for name
+        //int lsCurrentCal = (int)floor(log10(lunch[index].calories)) + 1;    // # of digits for cal
+        //int lsCurrentWeight = (int)floor(log10(lunch[index].weight)) + 1;  // # of digits for weight
+        //// # chars for name and # of digits for weight
+        //if (lsName < lsCurrentName) 
+        //    lsName = lsCurrentName;
+        //if (lsWeight < lsCurrentWeight) 
+        //    lsWeight = lsCurrentWeight;
+        //if (lsCalories < lsCurrentCal) 
+        //    lsCalories = lsCurrentCal;
     }
-
     printf("Name Weight Calories\n---- ----- ---------\n");
     for (int index = 0; index < LUNCH_ITEMS; index++)
     {
-        printf("%-*s %*d %*d\n", lsName, lunch[index].name, 
-            lsWeight, lunch[index].weight, lsCalories, lunch[index].calories);
+        printf("%-*s %*d %*d\n", NAMESPACER, lunch[index].name,
+            WEIGHTSPACER, lunch[index].weight, CALORIESPACER, lunch[index].calories);
         if (index >= STARTINDEX)
             free(lunch[index].name);
     }
