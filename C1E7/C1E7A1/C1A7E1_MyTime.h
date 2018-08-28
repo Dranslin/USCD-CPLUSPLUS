@@ -8,13 +8,10 @@
  * Win 10
  * Visual C++ 2017
  *
- * 
+ * Structure for MyTime that has hours, minutes and seconds.
  */
-
-
-#pragma once
 
 #ifndef C1A7E1_MYTIME_H
 #define C1A7E1_MYTIME_H
-    struct MyTime { int hours, minutes, seconds; };
+struct MyTime { int hours, minutes, seconds; };
 #endif // !C1A7E1_MYTIME_H

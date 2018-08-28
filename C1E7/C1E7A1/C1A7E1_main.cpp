@@ -8,12 +8,54 @@
  * Win 10
  * Visual C++ 2017
  *
- * 
+ * Prompts the user to enter two times in HH:MM:SS format then calls
+ * DetermineEllapsedTime() to calculate the difference between the
+ * two times and return it as a pointer to a new struct. Same
+ * start and ending times are treated as 24 hours.
  */
+
+#include <iostream>
+#include <iomanip>
+#include "C1A7E1_MyTime.h"
+
+MyTime *DetermineElapsedTime(const MyTime *startTime, const MyTime *endTime);
+
+using std::cout;
+using std::cin;
+using std::setfill;
+using std::setw;
 
 int main()
 {
+    MyTime userTimeOne, userTimeTwo, *utr;
+    char delimOne, delimTwo;
 
+    cout << "Enter two times in HH:MM:SS format, separated by a space.\n";
+    cin >> userTimeOne.hours >> delimOne >> userTimeOne.minutes >> delimTwo >>
+        userTimeOne.seconds >> userTimeTwo.hours >> delimOne >>
+        userTimeTwo.minutes >> delimTwo >> userTimeTwo.seconds;
+
+    //cout << "Values are userTimeOne - Hours: " << userTimeOne.hours <<
+    //    " Minutes: " << userTimeOne.minutes << " Seconds: " << userTimeOne.seconds;
+    //cout << "\nValues are userTimeTwo - Hours: " << userTimeTwo.hours <<
+    //    " Minutes: " << userTimeTwo.minutes << " Seconds: " << userTimeTwo.seconds << "\n";
+    utr = DetermineElapsedTime(&userTimeOne, &userTimeTwo);
+
+    //cout << "The time elapsed from " << setfill('0') << setw(2) << 
+    //    userTimeOne.hours << delimOne << setfill('0') << setw(2) <<
+    //    userTimeOne.minutes << delimTwo << setfill('0') << setw(2) <<
+    //    userTimeOne.seconds << " to " << setfill('0') << setw(2) << 
+    //    userTimeTwo.hours << delimOne << setfill('0') << setw(2) <<
+    //    userTimeTwo.minutes << delimTwo << setfill('0') << setw(2) <<
+    //    userTimeTwo.seconds << " is " << setfill('0') << setw(2) << 
+    //    utr->hours << delimOne << setfill('0') << setw(2) <<
+    //    utr->minutes << delimTwo << setfill('0') << setw(2) <<
+    //    utr->seconds << "\n";
+    cout << "The time elapsed from " << setfill('0') << setw(2)<< userTimeOne.hours << 
+        delimOne << userTimeOne.minutes << delimTwo << userTimeOne.seconds << " to " 
+        << userTimeTwo.hours << delimOne << userTimeTwo.minutes << delimTwo << 
+        userTimeTwo.seconds << " is " << utr->hours << delimOne << utr->minutes << 
+        delimTwo << utr->seconds;
 
     return 0;
 }
