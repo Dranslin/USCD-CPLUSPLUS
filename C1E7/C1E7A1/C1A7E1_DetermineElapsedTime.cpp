@@ -21,7 +21,11 @@ const int MINUTESECONDMOD = 60;
 
 MyTime *DetermineElapsedTime(const MyTime *startTime, const MyTime *endTime)
 {
-    static MyTime resultTime = {0, 0, 0};
+    static MyTime resultTime;
+    resultTime.hours = 0;
+    resultTime.minutes = 0;
+    resultTime.seconds = 0;
+
     long startTimeConvert = startTime->hours * MINUTESECONDMOD * MINUTESECONDMOD +
         startTime->minutes * MINUTESECONDMOD + startTime->seconds;
     long endTimeConvert = endTime->hours * MINUTESECONDMOD * MINUTESECONDMOD +

@@ -20,7 +20,7 @@
 
 MyTime *DetermineElapsedTime(const MyTime *startTime, const MyTime *endTime);
 const int STARTRUN = 0;
-const int ENDRUN = 0;
+const int ENDRUN = 3;
 
 using std::cout;
 using std::cin;
@@ -29,23 +29,28 @@ using std::setw;
 
 int main()
 {
-    MyTime userTimeOne, userTimeTwo, *utr;
-    char delimOne, delimTwo;
-
-    for (int timesRun = STARTRUN; timesRun <= ENDRUN; timesRun++)
+    // Run whole process ENDRUN number of times.
+    cout << setfill('0');
+    for (int timesRun = STARTRUN; timesRun < ENDRUN; timesRun++)
     {
+        // utr holds time difference struct
+        MyTime userTimeOne, userTimeTwo, *utr; 
+        char delimOne, delimTwo;
+
         cout << "Enter two times in HH:MM:SS format, separated by a space.\n";
         cin >> userTimeOne.hours >> delimOne >> userTimeOne.minutes >> delimTwo >>
             userTimeOne.seconds >> userTimeTwo.hours >> delimOne >>
             userTimeTwo.minutes >> delimTwo >> userTimeTwo.seconds;
 
-        utr = DetermineElapsedTime(&userTimeOne, &userTimeTwo);
+        // Get difference in time
+        utr = DetermineElapsedTime(&userTimeOne, &userTimeTwo); 
 
-        cout << setfill('0') << setw(2) << "The time elapsed from " << userTimeOne.hours <<
-            delimOne << userTimeOne.minutes << delimTwo << userTimeOne.seconds << " to "
-            << userTimeTwo.hours << delimOne << userTimeTwo.minutes << delimTwo <<
-            userTimeTwo.seconds << " is " << utr->hours << delimOne << utr->minutes <<
-            delimTwo << utr->seconds << "\n";
+        cout << "The time elapsed from " << setw(2) << userTimeOne.hours <<
+            delimOne << setw(2) << userTimeOne.minutes << delimTwo << setw(2) << 
+            userTimeOne.seconds << " to " << setw(2) << userTimeTwo.hours << delimOne 
+            << setw(2) << userTimeTwo.minutes << delimTwo << setw(2) << 
+            userTimeTwo.seconds << " is " << setw(2) << utr->hours << delimOne 
+            << setw(2) << utr->minutes << delimTwo << setw(2) << utr->seconds << "\n";
     }
     return 0;
 }
