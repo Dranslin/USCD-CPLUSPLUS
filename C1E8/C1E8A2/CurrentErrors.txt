@@ -1,0 +1,42 @@
+C1A8E2_main.c:57:31: warning: incompatible pointer types passing 'char *[256]' to parameter of type 'char *'
+                        fgets(buffer, BUFFERLIMIT, readFile);
+                              ^~~~~~
+stdio.h:194:41: note: passing argument to parameter '_Buffer' here
+        _Out_writes_z_(_MaxCount) char* _Buffer,
+                                        ^
+
+C1A8E2_main.c:62:38: warning: format specifies type 'char *'
+                        printf("%s", &buffer);
+                                ~~   ^~~~~~~
+
+C1A8E2_main.c: In function 'main':
+C1A8E2_main.c:57:31: warning: passing argument 1 of 'fgets' from incompatible pointer type
+                         fgets(buffer, BUFFERLIMIT, readFile);
+                               ^~~~~~
+
+In file included from C1A8E2_main.c:19:
+stdio.h:593:17: note: expected 'char * restrict' but argument is of type 'char **'
+   char *__cdecl fgets(char * __restrict__ _Buf,int _MaxCount,FILE * __restrict__ _File);
+                 ^~~~~
+
+C1A8E2_main.c:62:34: warning: format '%s' expects argument of type 'char *'
+                         printf("%s", &buffer);
+                                 ~^   ~~~~~~~
+
+C1A8E2_main.c(57): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[256]'
+
+??????????
+C1A8E2_main.c(57): warning C4024: 'fgets': different types for formal and actual parameter 1
+
+??????????
+C1A8E2_main.c(62): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *'
+
+                        fgets(buffer, BUFFERLIMIT, readFile);
+C1A8E2_main.c(57): warning 64: (Type mismatch (arg. no. 1) (char * = char **))
+
+??????????
+                        printf("%s", &buffer);
+C1A8E2_main.c(62): warning 559: (Size of argument no. 2 inconsistent with format)
+
+*** WARNING 559 EXPLANATION ***
+One of your conversion specifiers is not compatible with the data type of its corresponding argument.  Please see note 1.11 for information about which specifiers are compatible with which data types.  Also, if any of your arguments happen to be of type "size_t" also see note 2.12.
