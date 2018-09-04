@@ -54,12 +54,12 @@ int main(int argc, char *argv[])
                         //{
                         //    exit(EXIT_SUCCESS);
                         //}
-                        fgets(buffer, BUFFERLIMIT, readFile);
+                        fgets(&(buffer[0]), BUFFERLIMIT, readFile);
                         if (feof(readFile) != 0)
                         {
                             exit(EXIT_SUCCESS);
                         }
-                        printf("%s", &buffer);
+                        printf("%s", buffer);
                     }
                 } while (getc(stdin) == '\n');
 

@@ -1,5 +1,5 @@
 ﻿  C1A8E2_main.c
-c:\ucsd\c++ projects\uscd-cplusplus\c1e8\c1e8a2\c1a8e2_main.c(57): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[256]'
+c:\ucsd\c++ projects\uscd-cplusplus\c1e8\c1e8a2\c1a8e2_main.c(57): warning C4047: 'function': 'char *' differs in levels of indirection from 'char **'
 c:\ucsd\c++ projects\uscd-cplusplus\c1e8\c1e8a2\c1a8e2_main.c(57): warning C4024: 'fgets': different types for formal and actual parameter 1
-c:\ucsd\c++ projects\uscd-cplusplus\c1e8\c1e8a2\c1a8e2_main.c(62): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char *(*)[256]'
+c:\ucsd\c++ projects\uscd-cplusplus\c1e8\c1e8a2\c1a8e2_main.c(62): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
   C1E8A2.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C1E8\Debug\C1E8A2.exe
