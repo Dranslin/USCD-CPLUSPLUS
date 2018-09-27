@@ -20,26 +20,82 @@
  */
 
 #include <iostream>
+#include <fstream>
+#include <cstring>
 
-using std::cin;
-using std::cout;
-using std::cerr;
+const int BUFFERSIZE = 256;
+const int TARGETARGCOUNT = 5;
+const int FILESOURCELOC = 1;
+const int DESTFILELOC = 2;
+const int TARGETSTRINGLOC = 3;
+const int REPLACESTRINGLOC = 4;
 
-int main(int argc, char *argv[])
-//int main()
+using namespace std;
+
+int main()
+//int main(int argc, char *argv[])
 {
-    //char *argv[] = { "sourceFile", "destFile". "This", "That" };
-    //int argc = sizeof(argv) / sizeof(argv[0]);
-
-    if (argc == 5)
+    char *argv[] = { "maincpp", "sourceFile.txt", "destFile.txt", "\"string literal\"", "TESTING"};
+    int argc = sizeof(argv) / sizeof(argv[0]);
+    if (argc == TARGETARGCOUNT)  // Check for proper number of arguments
     {
-
+        ifstream sourceFile(argv[FILESOURCELOC]);
+        if (sourceFile.is_open())   // Test source file open
+        {
+            ofstream destFile(argv[DESTFILELOC]);
+            if (destFile.is_open())     // Test destination file open
+            {
+                char buffer[BUFFERSIZE];
+                // Get size of target string
+                int repsize = strlen(argv[TARGETSTRINGLOC]);
+                //int repSize = 0;
+                //for (char *targetStringWalker = argv[TARGETSTRINGLOC]; targetStringWalker++ != '\0';)
+                //    repSize++;
+                // Run through each line of input
+                
+                while (sourceFile.getline(buffer, sizeof(buffer)))
+                {
+                    char *cp1;
+                    //Capture up to next instance of target word
+                    for (cp1 = buffer; char *cp2 = strstr(cp1, argv[TARGETSTRINGLOC]);)
+                    {
+                        // Writes up to after first instance of replacement enounter
+                        // then adds replacement word before setting location to next index
+                        // after replacement.
+                        destFile.write(cp1, cp2 - cp1);
+                        destFile << argv[REPLACESTRINGLOC];
+                        //cp1 = cp2 + sizeof(cp1) / sizeof(cp1[0]);
+                        cp1 = cp2 + repsize;
+                    }
+                    if (sourceFile.eof())
+                    {
+                        break;
+                    }
+                    destFile << cp1 << "\n";
+                }
+                destFile.close();
+                sourceFile.close();
+            }
+            // Destination file open failure
+            else 
+            {
+                cerr << "ERROR: File " << argv[DESTFILELOC] << " could not be opened.";
+                exit(EXIT_FAILURE);
+            }
+        }
+        // Source file open failure
+        else
+        {
+            cerr << "ERROR: File " << argv[FILESOURCELOC] << " could not be opened.";
+            exit(EXIT_FAILURE);
+        }
+        ofstream destinationFile("testOut.txt");
     }
+    // Incorrect number of args failure
     else
     {
-        cerr <<"ERROR: Incorrect number of arguements detected.";
+        cerr << "ERROR: Incorrect number of arguments detected.";
         exit(EXIT_FAILURE);
     }
-
     return 0;
 }
