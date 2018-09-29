@@ -1,0 +1,4 @@
+﻿  C2A1E3_FindFirstInt.c
+c:\ucsd\c++ projects\uscd-cplusplus\c2a1\c2a1e3\c2a1e3_findfirstint.c(19): warning C4018: '<': signed/unsigned mismatch
+c:\ucsd\c++ projects\uscd-cplusplus\c2a1\c2a1e3\c2a1e3_findfirstint.c(26): warning C4090: 'return': different 'const' qualifiers
+  C2A1E3.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C2A1\Debug\C2A1E3.exe
