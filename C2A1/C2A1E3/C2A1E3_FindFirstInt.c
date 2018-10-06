@@ -16,13 +16,10 @@
 
 int *FindFirstInt(const int *ptr, size_t count, int value)
 {
-    int returnvalue = 0; // Kept outside to preserve use of this variable.
-    for (; returnvalue< count; returnvalue++)
-    {
-        if (ptr[returnvalue] == value)
-        {
-            break;      // No need to continue when found. Return at this addr.
-        }
-    }
-    return (returnvalue == count) ? NULL: &ptr[returnvalue];
+    int returnIndex = 0;
+    // Go through either whole array or until match is found.
+    while ((ptr[returnIndex] != value) && (returnIndex < (int)count))
+        returnIndex++;
+    // if no match returnIndex is greater or equal to count
+    return (returnIndex >= (int)count) ? NULL : &ptr[returnIndex];
 }

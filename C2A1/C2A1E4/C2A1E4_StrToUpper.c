@@ -17,9 +17,9 @@
 
 size_t StrToUpper(char *dest, const char *source)
 {
-    const char *holder = dest;
-    for (; (*dest++ = toupper(*source++));)
-        if (*dest == '\0') 
-            break;
-    return (size_t)(dest - holder);
+    const char *holder = dest;          // Holds position of string for size
+    // Walks through string, copying upper-case source to dest
+    for (; (*dest = toupper(*source)) != '\0'; dest++, source++)
+        ;
+    return (size_t)(dest - holder);     // get size
 }

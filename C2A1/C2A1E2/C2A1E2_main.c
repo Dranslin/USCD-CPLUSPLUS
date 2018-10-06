@@ -16,7 +16,9 @@
 
 int main(int argc, char *argv[])
 {
+    // Prints count of provided command line arguments.
     printf("Number of command line arguments are: %d\n", argc);
+    // Prints all command line arguments on their own line.
     for (int index = 0; index < argc; index++)
         printf("%s\n", argv[index]);
     return 0;

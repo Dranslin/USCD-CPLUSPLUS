@@ -1,0 +1,18 @@
+Nicholas Patience U07985691
+Nickspatience@gmail.com
+C/C++ Programming II : Dynamic Memory and File I/O Concepts
+134312 Ray Mitchell
+10/2/2018
+C2A1E0_Quiz.txt
+Quiz Answers
+
+1. A
+2. E
+3. A
+4. C
+5. A
+6. D
+7. B
+8. A
+9. A
+10. D

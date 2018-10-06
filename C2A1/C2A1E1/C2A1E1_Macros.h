@@ -15,7 +15,8 @@
  */
 
 #ifndef C2A1E1_MACROS_H
+#define C2A1E1_MACROS_H
 #define Product(X,Y) ((X)*(Y))
 #define Negate(X) (-(X))
-#define Elements(X) (sizeof(X)/sizeof(0[X]))
+#define Elements(X) (sizeof(X)/sizeof((X)[0]))
 #endif // !C2A1E1_MACROS_H
