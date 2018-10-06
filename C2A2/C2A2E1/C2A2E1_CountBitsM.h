@@ -13,9 +13,9 @@
  */
 
 #ifndef C2A2E1_COUNTBITSM_H
-#include <limits.h>
 #define C2A2E1_COUNTBITSM_H
+#include <limits.h>
 
-#define CountBitsM(X) ((sizeof(X)) * (CHAR_BIT))
+#define CountBitsM(X) ((int)sizeof(X) *CHAR_BIT)
 
 #endif // !C2A2E1_COUNTBITSM_H

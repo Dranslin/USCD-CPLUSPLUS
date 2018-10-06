@@ -13,13 +13,14 @@
 
 int CountIntBitsF(void)
 {
-    int value = 1;
-    unsigned int shiftCount = 0;
+    int shiftCount = 0;
     
-    while (value > 0)
+    for (unsigned int value = 1; value > 0; value <<= 1)
+        shiftCount++;
+    /*while (value > 0)
     {
         shiftCount++;
         value = value << 1;
-    }
-    return value;
+    }*/
+    return shiftCount;
 }
