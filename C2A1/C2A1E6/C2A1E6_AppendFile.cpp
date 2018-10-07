@@ -20,19 +20,25 @@ using namespace std;
 
 int AppendFile(const char *inFile, const char *outFile)
 {
-    ifstream sourceFile(inFile, ios_base::in | ios_base::binary);
+    ifstream sourceFile(inFile, ios_base::binary);
     if (sourceFile.is_open())
     {
-        ofstream destFile(outFile, ios_base::out | ios_base::app | ios_base::binary);
+        ofstream destFile(outFile, ios_base::app | ios_base::binary);
         if (destFile.is_open())
         {
             char charEntry;
-            // Read through character at a time... seeking better way.
-            while (!sourceFile.eof())
+            // Read sourceFile until EoF then write in destFile.
+            while (sourceFile.get(charEntry))
             {
-                sourceFile.get(charEntry);
                 destFile.put(charEntry);
             }
+            //char charEntry;
+            //// Read through character at a time... seeking better way.
+            //while (!sourceFile.eof())
+            //{
+            //    sourceFile.get(charEntry);
+            //    destFile.put(charEntry);
+            //}
             destFile.close();
         }
         // Destination file open failure

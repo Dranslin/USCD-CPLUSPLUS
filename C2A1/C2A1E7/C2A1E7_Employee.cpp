@@ -16,17 +16,9 @@
 #include <cstring>
 #include "C2A1E7_Employee.h"
 
- Employee::Employee()
- {
- }
- 
- Employee::~Employee()
- {
-     delete name;
- }
-
 void Employee::Set(const char *value)
 {
     name = new char(strlen(value) + 1);
-    memcpy(name, value, (size_t)(strlen(value) + 1));
+    //memcpy(name, value, (size_t)(strlen(value) + 1));
+    strcpy(name,value);
 }

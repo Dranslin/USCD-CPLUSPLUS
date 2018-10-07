@@ -4,7 +4,8 @@ using namespace std;
 
 int main()
 {
-    cout << 84L % 64L;
+    int x = 1;
+    x = x--;
 
     return 0;
 }

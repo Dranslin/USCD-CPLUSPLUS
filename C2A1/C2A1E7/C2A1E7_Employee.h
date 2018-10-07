@@ -25,8 +25,6 @@ private:
     double salary;
 
 public:
-    Employee();
-    ~Employee();
     void Set(const char *value);        // Proto-only
 
     void Set(int value = 25)            // For age
