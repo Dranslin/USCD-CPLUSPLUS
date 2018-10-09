@@ -18,7 +18,8 @@
 
 void Employee::Set(const char *value)
 {
-    name = new char(strlen(value) + 1);
+    // Allocate necessary space
+    name = new char[strlen(value) + 1];
     //memcpy(name, value, (size_t)(strlen(value) + 1));
-    strcpy(name,value);
+    strcpy(name, value);
 }

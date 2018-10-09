@@ -45,7 +45,7 @@ public:
         *value = name;
         return name;
     }
-    int Get(int &value)                 // For age
+    int Get(int &value) const           // For age
     {
         value = age;
         return age;
@@ -55,15 +55,12 @@ public:
         value = raise;
         return raise;
     }
-    inline double Get(double *value);   // For salary
+    inline double Get(double *value) const;   // For salary
 };
 
-
-
-double Employee::Get(double *value)
+double Employee::Get(double *value) const
 {
     *value = salary;
     return salary;
-}
-
+} 
 #endif // !C2A1E7_EMPLOYEE_H
