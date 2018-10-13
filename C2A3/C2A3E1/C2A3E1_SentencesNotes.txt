@@ -1,0 +1,37 @@
+Given: 
+	double values[25];
+Expressions: 
+	1. x = values
+	2. & values
+	3. (double **) values
+	4. sizeof( values [25] )
+	5. sizeof( & values + 0x20 )
+	6. values [-1]
+	7. 75 [ values ]
+	8. &( putchar('A') + values )
+	9. sizeof( int ) * sizeof(
+
+Is either an array of 25 doubles or is a pointer to the first index of an array of 25 doubles.
+
+Cases of non-decay:
+
+&values
+sizeof(value)
+_Alignof(value)
+String Literal of Char array initialization
+
+All answers are either 
+A. Values decays to a pointer to a double.
+B. Values is an array of 25 doubles.
+
+Answers:
+1. Values decays to a pointer to a double.
+2. Values is an array of 25 doubles.
+3. Values decays to a pointer to a double. ?
+4. Values is an array of 25 doubles. ?
+5. Values decays to a pointer to a double.
+6. Values decays to a pointer to a double.
+7. Values decays to a pointer to a double.
+8. Values decays to a pointer to a double.
+9. Values is an array of 25 doubles.
+10. Values is an array of 25 doubles. ?

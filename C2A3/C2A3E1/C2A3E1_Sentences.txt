@@ -1,0 +1,26 @@
+/*
+ * Nicholas Patience U07985691
+ * Nickspatience@gmail.com
+ * C/C++ Programming II : Dynamic Memory and File I/O Concepts
+ * 134312 Ray Mitchell
+ * 10/12/2018
+ * C2A3E1_Sentences.txt
+ * Win 10
+ * Visual C++ 2017
+ *
+ * Answers to first exercise. Set of expressions can either be:
+ * A. Values decays to a pointer to a double.
+ * B. Values is an array of 25 doubles.
+ */
+
+
+1. Values decays to a pointer to a double.
+2. Values is an array of 25 doubles.
+3. Values decays to a pointer to a double.
+4. Values is an array of 25 doubles.
+5. Values decays to a pointer to a double.
+6. Values decays to a pointer to a double.
+7. Values decays to a pointer to a double.
+8. Values decays to a pointer to a double.
+9. Values is an array of 25 doubles.
+10. Values is an array of 25 doubles.

@@ -1,3 +1,0 @@
-REC_NO; ++i)	/* lo o p through unne e ded records LOOP */
-	if (fsc?anf(fp, "%*[^\n]%*c") == EOF)	 { /* se e d & thro w away */
-
