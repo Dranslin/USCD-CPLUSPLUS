@@ -8,28 +8,41 @@
  * Win 10
  * Visual C++ 2017
  *
+ * Reads contents specified in fp line by line and separates
+ * the line into substrings based off of the criteria below. 
+ * These substrings are then printed out line-by-line.
  * 
+ * Criteria: 
+ * 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u', '\t', '\n'
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 #define BUFFERLENGTH 256
 
 void ParseStringFields(FILE *fp)
 {
     char *buffer[BUFFERLENGTH];
-    char delimList[] = { 'A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u', '\t', '\n' };
-    fgets(buffer, BUFFERLENGTH, fp);
-    printf("%s\n", buffer);
-
-    char *subString = strtok(buffer, delimList);
-    while (subString != NULL)
+    
+    // Read through file line-by-line
+    while (fgets(buffer, BUFFERLENGTH, fp))
     {
-        printf("%s\n", subString);
-        subString = strtok(subString, delimList);
+        char *subString = strtok(buffer, "AEIOUaeiou\t\n");
+        // Proceed through substrings
+        while (subString != NULL)
+        {
+            // Ignore leading whitespace
+            while (isspace(*subString))
+            {
+                subString++;
+            }
+
+            printf("%s\n", subString);
+            // Get next substring token
+            subString = strtok(NULL, "AEIOUaeiou\t\n");
+        }
     }
-
-
 }

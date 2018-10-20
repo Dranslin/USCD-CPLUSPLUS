@@ -22,7 +22,8 @@ FILE *OpenFile(const char *fileName)
 
     if ((source = fopen(fileName, "r")) == NULL)
     {
-        fprintf("File %s failed to open.", fileName, stderr);
+        // Fail condition: Alert and exit program.
+        fprintf(stderr, "File %s failed to open.", fileName);
         exit(EXIT_FAILURE);
     }
     return source;

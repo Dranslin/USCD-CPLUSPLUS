@@ -1,7 +1,6 @@
 ﻿  C2A3E4_ParseStringFields.c
-c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(24): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[256]'
-c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(24): warning C4024: 'fgets': different types for formal and actual parameter 1
-c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(27): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[256]'
-c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(27): warning C4024: 'strtok': different types for formal and actual parameter 1
-c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(25): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'char **'
+c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(31): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[256]'
+c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(31): warning C4024: 'fgets': different types for formal and actual parameter 1
+c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(33): warning C4047: 'function': 'char *' differs in levels of indirection from 'char *[256]'
+c:\ucsd\c++ projects\uscd-cplusplus\c2a3\c2a3e4\c2a3e4_parsestringfields.c(33): warning C4024: 'strtok': different types for formal and actual parameter 1
   C2A3E4.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C2A3\Debug\C2A3E4.exe
