@@ -1,2 +1,6 @@
 ﻿  C2A4E2_main-Driver.c
-  C2A4E2.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C2A4\Debug\C2A4E2.exe
+c:\ucsd\c++ projects\uscd-cplusplus\c2a4\c2a4e2\c2a4e2_main-driver.c(70): error C2143: syntax error: missing ')' before '{'
+c:\ucsd\c++ projects\uscd-cplusplus\c2a4\c2a4e2\c2a4e2_main-driver.c(77): error C2143: syntax error: missing ')' before '{'
+c:\ucsd\c++ projects\uscd-cplusplus\c2a4\c2a4e2\c2a4e2_main-driver.c(92): error C2143: syntax error: missing ')' before '{'
+c:\ucsd\c++ projects\uscd-cplusplus\c2a4\c2a4e2\c2a4e2_main-driver.c(99): error C2143: syntax error: missing ')' before '{'
+c:\ucsd\c++ projects\uscd-cplusplus\c2a4\c2a4e2\c2a4e2_main-driver.c(115): error C2143: syntax error: missing ')' before '{'

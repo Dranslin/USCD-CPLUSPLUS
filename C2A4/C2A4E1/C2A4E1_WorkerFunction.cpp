@@ -19,8 +19,7 @@ void ComputeAverages(float (*targetArray)[DIM1][DIM2][DIM3], float *nestedAvg, f
 
 void WorkerFunction(float *nestedAvg, float *linearAvg)
 {
-    static float testArray[DIM0][DIM1][DIM2][DIM3];
-    //float *testPTR[DIM1][DIM2][DIM3] = testArray;
+    float testArray[DIM0][DIM1][DIM2][DIM3];
 
     // Fill array with random numbers
     RandomizeArray(testArray);
