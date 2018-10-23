@@ -12,8 +12,6 @@
  * filling each element with a random number generated from rand.
  */
 
-//#include <stdlib.h>
-//#include <time.h>
 #include <cstdlib>
 #include <ctime>
 #include <chrono>
@@ -26,6 +24,7 @@ void RandomizeArray(float (*targetArray)[DIM1][DIM2][DIM3])
 
     // Traverse array and fill with random numbers.
     for (float *tempTarget = (float *)targetArray; 
-        tempTarget < &targetArray[DIM0 - 1][DIM1 - 1][DIM2 - 1][DIM3]; tempTarget++)
+        tempTarget < &targetArray[DIM0 - 1][DIM1 - 1][DIM2 - 1][DIM3];
+        tempTarget++)
         *tempTarget = (float)rand();
 }

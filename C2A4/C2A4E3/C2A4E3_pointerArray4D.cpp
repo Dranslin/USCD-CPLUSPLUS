@@ -15,6 +15,7 @@ extern const int DIM0 = 2;
 extern const int DIM1 = 3;
 extern const int DIM2 = 4;
 extern const int DIM3 = 5;
+extern float ***pointerArray4D[];
 
 // float lv 4 - 4 of 5 - [2][3][4][5] - [a,b][a,b,c][x] -> [a,b][a,b,c][a,b,c,d][x]
 static float lv4aaa[DIM3], lv4aab[DIM3], lv4aac[DIM3], lv4aad[DIM3]; // lv 4 - Final [a][a][x]
@@ -40,4 +41,4 @@ static float **lv2b[DIM1] = {lv3ba, lv3bb, lv3bc}; // lv 2 - Row b - [b][x]
 
 // Base layer
 // float ***lv1 - 1 of 2 - x -> [x]
-extern float ***pointerArray4D[DIM0] = {lv2a, lv2b};
+float ***pointerArray4D[DIM0] = {lv2a, lv2b};

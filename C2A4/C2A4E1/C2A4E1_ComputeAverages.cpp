@@ -29,7 +29,7 @@ void ComputeAverages(float (*targetArray)[DIM1][DIM2][DIM3], float *nestedAvg, f
     avg = 0;
     
     // Traverse array by compact pointer to get sum for average.
-    for (float *traveler = (float *)targetArray[DIM1][DIM2][DIM3]; 
+    for (float *traveler = (float *)targetArray; 
         traveler < &targetArray[DIM0 - 1][DIM1 - 1][DIM2 - 1][DIM3]; traveler++)
         avg += *traveler;
 
