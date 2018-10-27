@@ -1,7 +1,5 @@
 ﻿  C2A4E1_ComputeAverages.cpp
   C2A4E1_RandomizeArray.cpp
-c:\ucsd\c++ projects\uscd-cplusplus\c2a4\c2a4e1\c2a4e1_randomizearray.cpp(23): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-c:\ucsd\c++ projects\uscd-cplusplus\c2a4\c2a4e1\c2a4e1_randomizearray.cpp(28): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
   C2A4E1_WorkerFunction.cpp
   Generating Code...
   C2A4E1.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C2A4\Debug\C2A4E1.exe

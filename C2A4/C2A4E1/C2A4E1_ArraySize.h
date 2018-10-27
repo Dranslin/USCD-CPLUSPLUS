@@ -18,7 +18,6 @@ const int DIM0 = 10;
 const int DIM1 = 7;
 const int DIM2 = 6;
 const int DIM3 = 8;
-const int TOTALCOUNT = DIM0 + (DIM0 * DIM1) +
-    ( DIM0 * DIM1 * DIM2) + (DIM0 * DIM1 * DIM2 * DIM3);
+const int TOTALCOUNT = DIM0 * DIM1 * DIM2 * DIM3;
 
 #endif // !C2A4E1_ARRAYSIZE_H

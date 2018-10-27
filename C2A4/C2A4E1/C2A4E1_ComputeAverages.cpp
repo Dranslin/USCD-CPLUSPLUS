@@ -14,7 +14,7 @@
 
 #include "C2A4E1_ArraySize.h"
 
-void ComputeAverages(float(*targetArray)[DIM1][DIM2][DIM3], float *nestedAvg, float *linearAvg)
+void ComputeAverages(float (*targetArray)[DIM1][DIM2][DIM3], float *nestedAvg, float *linearAvg)
 {
     float avg = 0;
 
@@ -23,14 +23,15 @@ void ComputeAverages(float(*targetArray)[DIM1][DIM2][DIM3], float *nestedAvg, fl
         for (int index1 = 0; index1 < DIM1; index1++)
             for (int index2 = 0; index2 < DIM2; index2++)
                 for (int index3 = 0; index3 < DIM3; index3++)
-                    avg =+ targetArray[index0][index1][index2][index3];
+                    avg += targetArray[index0][index1][index2][index3];
 
     *nestedAvg = avg / TOTALCOUNT;
     avg = 0;
     
     // Traverse array by compact pointer to get sum for average.
-    for (float *traveler = (float *)targetArray[DIM1][DIM2][DIM3]; traveler < &targetArray[DIM0 - 1][DIM1 - 1][DIM2 - 1][DIM3]; traveler++)
-        avg = +*traveler;
+    for (float *traveler = (float *)targetArray; 
+        traveler < &targetArray[DIM0 - 1][DIM1 - 1][DIM2 - 1][DIM3]; traveler++)
+        avg += *traveler;
 
     *linearAvg = avg / TOTALCOUNT;
 }
