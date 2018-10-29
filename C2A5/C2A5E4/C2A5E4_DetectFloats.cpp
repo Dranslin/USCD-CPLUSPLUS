@@ -11,7 +11,10 @@
  *
  */
 
+#include "C2A5E4_StatusCode-Driver.h"
+
 StatusCode DetectFloats(const char *chPtr)
 {
-
+    StatusCode returnV = NO_MATCH;
+    return (returnV);
 }

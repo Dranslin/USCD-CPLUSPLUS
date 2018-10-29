@@ -11,7 +11,16 @@
  *
  */
 
+#include <fstream>
+#include <iostream>
+using namespace std;
+
 void OpenFile(const char *fileName, ifstream &inFile)
 {
-
+    inFile.open(fileName);
+    if (!inFile.is_open())
+    {
+        cerr << "Unable to find file " << fileName << "\n";
+        exit(EXIT_FAILURE);
+    }
 }

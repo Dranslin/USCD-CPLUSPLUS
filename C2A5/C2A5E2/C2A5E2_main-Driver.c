@@ -78,7 +78,7 @@ int Test2D(Type **ppObj, int dim0, int dim1)
          // For this to work Type must be a 1D array type.
          for (ix = 0; ix < (int)(sizeof(item)/sizeof(item[0])); ++ix)
          {
-            //            printf("%4d\n", testValue);
+                        //printf("%4d\n", testValue);
             ppObj[row][col][ix] = testValue;
             if (testValue == SCHAR_MAX)
                testValue = SCHAR_MIN;

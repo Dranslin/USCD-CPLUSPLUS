@@ -8,7 +8,7 @@
  * Win 10
  * Visual C++ 2017
  *
- * 
+ * Swaps the contents of pa and pb
  */
 
 #include <stdio.h>
@@ -17,20 +17,17 @@
 
 void SwapObjects(void *pa, void *pb, size_t size)
 {
-    void *temp;
-    if ((temp = (void *)malloc(sizeof(pa))) == NULL)
+    void *temp = malloc(size);
+    // Test for failure
+    if (temp == NULL)
     {
         fputs("Memory alloc failed.\n", stderr);
         exit(EXIT_FAILURE);
     }
+
     // b -> temp, a -> b, temp -> a
-
-    memcpy(temp, pa, size);
-    memcpy(pb, pa, size);
-    memcpy(pa, temp, size);
-
+    memcpy((void *)temp, (void *)pa, size);
+    memcpy((void *)pa, (void *)pb, size);
+    memcpy((void *)pb, (void *)temp, size);
     free(temp);
-/*
-    void **TestA = (void ***)SafeMalloc(sizeof(size));
-    void **Testb = (void ***)SafeMalloc(sizeof(size));*/
 }
