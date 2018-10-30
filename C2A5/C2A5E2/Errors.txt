@@ -1,0 +1,60 @@
+??????????
+C2A5E2_Create2D.c:34:22: warning: incompatible pointer types assigning to 'Type *' from 'Type **'; dereference with *
+        toArray[idx] = end + idx * cols;
+                     ^ ~~~~~~~~~~~~~~~~
+                       *(              )
+
+??????????
+C2A5E2_Create2D.c:33:27: warning: comparison of integers of different signs: 'int' and 'size_t'
+    for (int idx = 0; idx < rows; idx++)
+                      ~~~ ^ ~~~~
+*** EXPLANATION ***
+Operations between signed and unsigned types require the compiler to convert one or the other (or both) operands to a common type.  If a signed type is converted to an unsigned type information will be lost if the signed value is negative.  If an unsigned type is converted to a signed type the signed type may not be able to represent the full range of positive values that the unsigned type can.  It is a programmer's responsibility to know the range of values his/her program is processing and select the appropriate data types accordingly.  To suppress this warning in cases where you are certain that no such losses will occur merely typecast one of the expressions to the data type of the other, or change its original declaration type if more appropriate.
+
+
+
+##### The Intel compiler found 2 problems. #####
+(https://software.intel.com)
+
+??????????
+C2A5E2_Create2D.c(33): warning #2557: comparison between signed and unsigned operands
+      for (int idx = 0; idx < rows; idx++)
+                            ^
+*** EXPLANATION ***
+Operations between signed and unsigned types require the compiler to convert one or the other (or both) operands to a common type.  If a signed type is converted to an unsigned type information will be lost if the signed value is negative.  If an unsigned type is converted to a signed type the signed type may not be able to represent the full range of positive values that the unsigned type can.  It is a programmer's responsibility to know the range of values his/her program is processing and select the appropriate data types accordingly.  To suppress this warning in cases where you are certain that no such losses will occur merely typecast one of the expressions to the data type of the other, or change its original declaration type if more appropriate.
+
+??????????
+C2A5E2_Create2D.c(34): warning #556: a value of type "Type **" cannot be assigned to an entity of type "Type *"
+          toArray[idx] = end + idx * cols;
+                       ^
+
+??????????
+C2A5E2_Create2D.c: In function 'Create2D':
+C2A5E2_Create2D.c:33:27: warning: comparison of integer expressions of different signedness: 'int' and 'size_t' {aka 'long long unsigned int'}
+     for (int idx = 0; idx < rows; idx++)
+                           ^
+
+??????????
+C2A5E2_Create2D.c:34:22: warning: assignment to 'signed char (*)[9]' from incompatible pointer type 'signed char (**)[9]'
+         toArray[idx] = end + idx * cols;
+                      ^
+
+??????????
+C2A5E2_Create2D.c(34): warning C4047: '=': 'Type (*)' differs in levels of indirection from 'Type (**)'
+
+
+??????????
+    for (int idx = 0; idx < rows; idx++)
+C2A5E2_Create2D.c(33): warning 574: (Signed-unsigned mix with relational)
+C2A5E2_Create2D.c(33): warning 737: (Loss of sign in promotion from int to unsigned int)
+*** WARNING 737 EXPLANATION ***
+"Loss of sign" occurs whenever a negative value is converted to an unsigned data type; the result is implementation dependent.  A "loss of sign" warning, however, does not mean that the value being converted is actually negative.  Instead it is generated whenever an automatic conversion from a signed type to an unsigned type occurs and is merely intended to notify you that loss of sign will occur if a the value being converted happens to be negative.  It is a programmer's responsibility to know the characteristics of the values his/her program is processing and select the appropriate data types accordingly.  A common way to suppress this warning in cases where you are certain that no negative values will occur is to typecast the expression having the signed type to the type of the expression having the unsigned type.
+
+??????????
+        toArray[idx] = end + idx * cols;
+C2A5E2_Create2D.c(34): warning 737: (Loss of sign in promotion from int to unsigned int)
+C2A5E2_Create2D.c(34): warning 64: (Type mismatch (assignment) (signed char (*)[9] = signed char (**)[9]))
+*** WARNING 737 EXPLANATION ***
+"Loss of sign" occurs whenever a negative value is converted to an unsigned data type; the result is implementation dependent.  A "loss of sign" warning, however, does not mean that the value being converted is actually negative.  Instead it is generated whenever an automatic conversion from a signed type to an unsigned type occurs and is merely intended to notify you that loss of sign will occur if a the value being converted happens to be negative.  It is a programmer's responsibility to know the characteristics of the values his/her program is processing and select the appropriate data types accordingly.  A common way to suppress this warning in cases where you are certain that no negative values will occur is to typecast the expression having the signed type to the type of the expression having the unsigned type.
+*** WARNING 64 EXPLANATION ***
+An implicit type conversion is not allowed from the data type on the right side of the indicated assignment to the data type on the left side.  You must either typecast or change the data type of the expression on the right.

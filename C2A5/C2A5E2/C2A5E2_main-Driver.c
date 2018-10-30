@@ -99,7 +99,7 @@ int Test2D(Type **ppObj, int dim0, int dim1)
       // For this to work Type must be a 1D array type.
       for (ix = 0; ix < (int)(sizeof(item)/sizeof(item[0])); ++ix)
       {
-         //         printf("%4d\n", (*pObj)[ix]);
+                  printf("%4d and testvalue %4d %d\n", (*pObj)[ix], testValue, (*pObj)[ix] == testValue);
          if ((*pObj)[ix] != testValue)
          {
             error = 1;

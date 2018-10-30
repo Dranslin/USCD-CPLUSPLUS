@@ -18,36 +18,25 @@
 
 Type **Create2D(size_t rows, size_t cols)
 {
-    size_t rowBitSize = sizeof(Type *) * rows;
-    Type **toArray;
-
     // Allocate space for full array.
-    toArray = malloc(rows * sizeof *toArray + (rows * (cols * sizeof **toArray)));
-    //toArray = (Type **)malloc(rowBitSize + rowBitSize * cols);
+    Type **toArray;
+    toArray = malloc(sizeof(**toArray) * (rows + (cols * rows)));
+    // Test for alloc failure
     if (toArray == NULL)
     {
         fputs("Memory alloc failed.\n", stderr);
         exit(EXIT_FAILURE);
     }
-    size_t i;
-    int * const data = toArray + rows;
-    for (i = 0; i < rows; i++)
-        toArray[i] = data + i * cols;
 
-    //Type **traveler = toArray;
-    //int *end = toArray + rows;
-    //for (int idx = 0; idx < rows; ++idx)
-    //    toArray[idx] = toArray + idx * (int)cols;
-
-
-    // Traverse array to place row pointers
-    //int *data = toArray + rows;
-    //for (size_t i = 0; i < rows; i++)
-    //    toArray[i] = data + i * cols;
+    // Traverse array to point first dim array pointers to 2nd dim.
+    Type **end = toArray + rows;
+    for (int idx = 0; idx < rows; idx++)
+        toArray[idx] = end + idx * cols;
 
     return(toArray);
 }
 
+// Single free call with single malloc statement used.
 void Free2D(void *p)
 {
     free(p);
