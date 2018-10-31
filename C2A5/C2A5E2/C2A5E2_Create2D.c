@@ -21,6 +21,7 @@ Type **Create2D(size_t rows, size_t cols)
     // Allocate space for full array.
     Type **toArray;
     toArray = malloc(sizeof(**toArray) * (rows + (cols * rows)));
+    //toArray = calloc((rows * cols + rows), sizeof(**toArray));
     // Test for alloc failure
     if (toArray == NULL)
     {
@@ -30,8 +31,9 @@ Type **Create2D(size_t rows, size_t cols)
 
     // Traverse array to point first dim array pointers to 2nd dim.
     Type **end = toArray + rows;
-    for (int idx = 0; idx < rows; idx++)
-        toArray[idx] = end + idx * cols;
+    for (unsigned int idx = 0; idx < rows; idx++)
+        //toArray[idx] = end + ((sizeof(**toArray) * idx * cols) / sizeof(*toArray));
+        toArray[idx] = end + ((idx * cols * sizeof(**toArray)) / 3);
 
     return(toArray);
 }

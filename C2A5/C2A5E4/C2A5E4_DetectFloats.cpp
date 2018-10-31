@@ -139,7 +139,7 @@ StatusCode DetectFloats(const char *chPtr)
 
             case EXPONENT:
             {
-                if ((inChar == '+') || (inChar = '-'))
+                if ((inChar == '+') || (inChar == '-'))
                 {
                     state = SIGNED;
                 }
@@ -175,7 +175,8 @@ StatusCode DetectFloats(const char *chPtr)
                 }
                 else if ((inChar == 'F') || (inChar == 'L') || (inChar == 0))
                 {
-                    state = END_SUCCESS;
+                    (inChar++ == 0) ? state = END_SUCCESS : state = END_FAILURE;
+                    //state = END_SUCCESS;
                 }
                 else
                 {
@@ -210,8 +211,8 @@ StatusCode DetectFloats(const char *chPtr)
             }
             
         }
-        //if ( state != END_SUCCESS) chPtr++;
-        chPtr++;
+        if ( state != END_SUCCESS) chPtr++;
+        //chPtr++;
     }
     return (NO_MATCH);
 }
