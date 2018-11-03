@@ -1,15 +1,26 @@
-#include <stdio.h>
-#include <string.h>
+#include "stdio.h"
+
+typedef int(*pPrintf)(const char*, ...);
+typedef int(*pPuts)(const char*);
+
+pPrintf getPrintf(void)
+{
+    return &printf;
+}
+//or if this is what you've tried to do:
+int* getPrintfAsIntPointer(void)
+{
+    return (int*)&printf;
+}
+
+pPuts getPuts()
+{
+    return &puts;
+}
+
 int main()
 {
-    char string[50] = "Test,string1,Test,string2:Test:string3";
-    char *p;
-    printf("String  \"%s\" is split into tokens:\n", string);
-    p = strtok(string, ",:");
-    while (p != NULL)
-    {
-        printf("%s\n", p);
-        p = strtok(NULL, ",:");
-    }
+    getPrintf()("%s\n", "hello world");
+    getPuts()("hello world\n");
     return 0;
 }
