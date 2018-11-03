@@ -8,7 +8,7 @@
  * Win 10
  * Visual C++ 2017
  *
- *
+ * Opens the designmated file or errors out an ddies.
  */
 
 #include <fstream>
@@ -18,6 +18,7 @@ using namespace std;
 void OpenFile(const char *fileName, ifstream &inFile)
 {
     inFile.open(fileName);
+    // Test for failure of opening.
     if (!inFile.is_open())
     {
         cerr << "Unable to find file " << fileName << "\n";

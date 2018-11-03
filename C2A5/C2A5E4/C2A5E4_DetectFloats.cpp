@@ -175,7 +175,8 @@ StatusCode DetectFloats(const char *chPtr)
                 }
                 else if ((inChar == 'F') || (inChar == 'L') || (inChar == 0))
                 {
-                    (inChar++ == 0) ? state = END_SUCCESS : state = END_FAILURE;
+                    cout << "\nDeref: " << *chPtr+1 << ",  " << (chPtr + 1) << ", int version " << (char)chPtr + 1 << " isspace: " << isspace(inChar + 1) << "\n";
+                    (isspace(inChar+1)) ? state = END_SUCCESS : state = END_FAILURE;
                     //state = END_SUCCESS;
                 }
                 else

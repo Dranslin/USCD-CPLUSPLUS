@@ -1,2 +1,5 @@
-﻿  C2A5E4_DetectFloats.cpp
-  C2A5E4.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C2A5\Debug\C2A5E4.exe
+﻿  C2A5E4_OpenFile.cpp
+  C2A5E4_DetectFloats.cpp
+c:\users\nick\desktop\ucsd c++\uscd-cplusplus\c2a5\c2a5e4\c2a5e4_detectfloats.cpp(178): warning C4302: 'type cast': truncation from 'const char *' to 'char'
+  Generating Code...
+  C2A5E4.vcxproj -> C:\Users\nick\Desktop\UCSD C++\USCD-CPLUSPLUS\C2A5\Debug\C2A5E4.exe
