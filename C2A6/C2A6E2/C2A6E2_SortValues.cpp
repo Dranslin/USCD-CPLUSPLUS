@@ -11,13 +11,16 @@
  * Uses the bubble sort method on the specified array to sort in descending order.
  */
 
+#include <cstdlib>
+using namespace std;
+
 float *SortValues(float *first, size_t elements)
 {
-    int swapped;
+    bool swapped;
     do
     {
         // Reset flag value
-        swapped = 0;
+        swapped = false;
         for (float *walker = first, *end = &first[elements - 1]; walker < end; walker++)
         {
             // Test to see if swap is necessary
@@ -27,8 +30,9 @@ float *SortValues(float *first, size_t elements)
                 float temp = *walker;
                 *walker = *(walker + 1);
                 *(walker + 1) = temp;
-                swapped = 1;
+                swapped = true;
             }
+            end--;
         }
     // If no swap occurs, no need to continue.
     } while (swapped);

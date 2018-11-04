@@ -16,7 +16,7 @@
 
 FILE *OpenFile(const char *fileName)
 {
-    FILE *source;
+    FILE *source = NULL;
 
     if ((source = fopen(fileName, "r")) == NULL)
     {

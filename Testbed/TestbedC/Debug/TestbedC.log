@@ -1,2 +1,7 @@
 ﻿  Source.c
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\source.c(60): warning C4474: 'fscanf' : too many arguments passed for format string
+  c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\source.c(60): note: placeholders and their parameters expect 1 variadic arguments, but 2 were provided
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\source.c(127): warning C4090: 'return': different 'const' qualifiers
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\source.c(120): warning C4090: 'initializing': different 'const' qualifiers
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\source.c(140): warning C4098: 'FreeList': 'void' function returning a value
   TestbedC.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\Testbed\Debug\TestbedC.exe
