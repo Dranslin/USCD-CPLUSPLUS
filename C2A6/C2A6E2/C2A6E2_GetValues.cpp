@@ -19,7 +19,7 @@ using namespace std;
 float *GetValues(float *first, size_t elements)
 {
     // Walk through full array and fill user entered values
-    for (float *walker = first, *last = &first[elements - 1]; walker < last; walker++)
+    for (float *walker = first, *last = &first[elements]; walker < last; walker++)
     {
         cout << "Please enter a value to fill into the set:\n";
         cin >> *walker;

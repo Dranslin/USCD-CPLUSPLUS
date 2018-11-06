@@ -16,24 +16,28 @@ using namespace std;
 
 float *SortValues(float *first, size_t elements)
 {
+    // End and swapped declared out of loop for persistance.
+    // End decrements and swapped has to exist out of do-while loop
+    float *end = &first[elements - 1];
     bool swapped;
+
     do
     {
-        // Reset flag value
         swapped = false;
-        for (float *walker = first, *end = &first[elements - 1]; walker < end; walker++)
+        // Reset flag value
+        for (float *walker = first, *trail = first + 1; walker < end; walker++, trail++)
         {
             // Test to see if swap is necessary
-            if (*walker < *(walker + 1))
+            if (*walker < *trail)
             {
                 // Save copy of current value and swap next value
                 float temp = *walker;
-                *walker = *(walker + 1);
-                *(walker + 1) = temp;
+                *walker = *trail;
+                *trail = temp;
                 swapped = true;
             }
-            end--;
         }
+        --end;
     // If no swap occurs, no need to continue.
     } while (swapped);
 

@@ -27,6 +27,7 @@
 // Calls strcmp and uses return value for both sorting and matching.
 int Compare(const void *elemA, const void *elemB)
 {
+    // Returns positive when A > B, 0 when A = B, and negative when A < B 
     return strcmp(*(char **)elemA, *(char **)elemB);
 }
 
