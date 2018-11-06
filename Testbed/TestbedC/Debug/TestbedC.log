@@ -1,7 +1,7 @@
-﻿  Source.c
-c:\users\nick\desktop\ucsd c++\uscd-cplusplus\testbed\testbedc\source.c(75): warning C4474: 'fscanf' : too many arguments passed for format string
-  c:\users\nick\desktop\ucsd c++\uscd-cplusplus\testbed\testbedc\source.c(75): note: placeholders and their parameters expect 1 variadic arguments, but 2 were provided
-c:\users\nick\desktop\ucsd c++\uscd-cplusplus\testbed\testbedc\source.c(144): warning C4090: 'return': different 'const' qualifiers
-c:\users\nick\desktop\ucsd c++\uscd-cplusplus\testbed\testbedc\source.c(137): warning C4090: 'initializing': different 'const' qualifiers
-c:\users\nick\desktop\ucsd c++\uscd-cplusplus\testbed\testbedc\source.c(162): warning C4098: 'FreeList': 'void' function returning a value
-  TestbedC.vcxproj -> C:\Users\nick\Desktop\UCSD C++\USCD-CPLUSPLUS\Testbed\Debug\TestbedC.exe
+﻿  C2A6E4_Testbed.c
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\c2a6e4_testbed.c(78): warning C4474: 'fscanf' : too many arguments passed for format string
+  c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\c2a6e4_testbed.c(78): note: placeholders and their parameters expect 1 variadic arguments, but 2 were provided
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\c2a6e4_testbed.c(154): warning C4090: 'return': different 'const' qualifiers
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\c2a6e4_testbed.c(146): warning C4090: 'initializing': different 'const' qualifiers
+c:\ucsd\c++ projects\uscd-cplusplus\testbed\testbedc\c2a6e4_testbed.c(172): warning C4098: 'FreeList': 'void' function returning a value
+  TestbedC.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\Testbed\Debug\TestbedC.exe
