@@ -15,16 +15,26 @@
 */
 
 #include "C2A6E4_List-Driver.h"
-#include <fstream>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAX_BUFFER_SIZE 128
 
 List *CreateNode(const char *targetString);
+List *CreateList(FILE *fp);
+
+static int maxStringSize = 0;
 
 // Allocate space for each node and node's string, then return pointer to node
 List *CreateNode(const char *targetString)
 {
+    int currntStringSize = (int)(sizeof(*targetString) / (sizeof(targetString)[0]));
+    if (maxStringSize < currntStringSize)
+    {
+        maxStringSize = currntStringSize;
+    }
+
     List *newNode = (struct List *)malloc(sizeof(struct List));
 
     // Testing for failure
@@ -46,15 +56,13 @@ List *CreateNode(const char *targetString)
     return newNode;
 }
 
-// Creates the linked list, testing for matching strings in linked list
-// increments counts for each matched string to a node, and creates nodes
-// if not found.
 List *CreateList(FILE *fp)
 {
     List *head = NULL, *walker = NULL;
     char readString[MAX_BUFFER_SIZE];
 
-    for (; fscanf(fp, "%s", readString, MAX_BUFFER_SIZE) != -1;)
+    for (; fscanf(fp, "%s", readString) != EOF;)
+    //for (; fscanf(fp, "%s", readString, MAX_BUFFER_SIZE) != -1;)
     {
         // Test if head node is created yet.
         if (head == NULL)
@@ -101,10 +109,10 @@ List *PrintList(const List *head)
     // Traverse list and print values
     while (walker != NULL)
     {
-        printf("%s %4d ea\n", walker->str, walker->count);
+        printf("%*s %4d ea\n", maxStringSize, walker->str, walker->count);
         walker = walker->next;
     }
-    return head;
+    return (const List *)head;
 }
 
 // Free two malloc cases, node and node's string
@@ -121,5 +129,4 @@ void FreeList(List *head)
         free(temp->str);
         free(temp);
     }
-    return head;
 }
