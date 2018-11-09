@@ -1,18 +1,18 @@
 /*
-* Nicholas Patience U07985691
-* Nickspatience@gmail.com
-* C/C++ Programming II : Dynamic Memory and File I/O Concepts
-* 134312 Ray Mitchell
-* 11/3/2018
-* C2A6E4_List.c
-* Win 10
-* Visual C++ 2017
-*
-* Provides definitions for CreateNode, CreateList, PrintList and FreeList.
-* These functions dynamically allocate space for new nodes and each node's
-* string, tests provided strings then fills in the node's strings and counts
-* for each string, prints out the results, and frees the allocated memory.
-*/
+ * Nicholas Patience U07985691
+ * Nickspatience@gmail.com
+ * C/C++ Programming II : Dynamic Memory and File I/O Concepts
+ * 134312 Ray Mitchell
+ * 11/3/2018
+ * C2A6E4_List.c
+ * Win 10
+ * Visual C++ 2017
+ *
+ * Provides definitions for CreateNode, CreateList, PrintList and FreeList.
+ * These functions dynamically allocate space for new nodes and each node's
+ * string, tests provided strings then fills in the node's strings and counts
+ * for each string, prints out the results, and frees the allocated memory.
+ */
 
 #include "C2A6E4_List-Driver.h"
 #include <stdio.h>
@@ -20,21 +20,15 @@
 #include <string.h>
 
 #define MAX_BUFFER_SIZE 128
+#define MAX_STRING_SIZE 13
 
-List *CreateNode(const char *targetString);
-List *CreateList(FILE *fp);
+static List *CreateNode(const char *targetString);
 
-static int maxStringSize = 0;
+unsigned int bigStringSize = 0;
 
 // Allocate space for each node and node's string, then return pointer to node
-List *CreateNode(const char *targetString)
+static List *CreateNode(const char *targetString)
 {
-    int currntStringSize = (int)(sizeof(*targetString) / (sizeof(targetString)[0]));
-    if (maxStringSize < currntStringSize)
-    {
-        maxStringSize = currntStringSize;
-    }
-
     List *newNode = (struct List *)malloc(sizeof(struct List));
 
     // Testing for failure
@@ -46,11 +40,14 @@ List *CreateNode(const char *targetString)
 
     // Initialize values.
     newNode->next = NULL;
-    newNode->count = 1;
+    newNode->count = 0;
+
+    unsigned int stringSize = (int)strlen(targetString) + 1;
+    if (stringSize > bigStringSize)
+        bigStringSize = stringSize;
 
     // Allocate space for string, then copy.
-    //newNode->str = (char *)malloc(sizeof(char) * (sizeof(targetString) / sizeof(targetString)[0]));
-    newNode->str = (char *)malloc((sizeof(char) * (strlen(targetString) + 1)));
+    newNode->str = (char *)malloc(sizeof(char) * stringSize);
     strcpy(newNode->str, targetString);
 
     return newNode;
@@ -82,7 +79,7 @@ List *CreateList(FILE *fp)
             // If match found, increment count and stop traversing.
             if (strcmp(walker->str, readString) == 0)
             {
-                walker->count += 1;
+                walker->count++;
                 walker = NULL;
             }
             // Continue walking list.
@@ -94,7 +91,7 @@ List *CreateList(FILE *fp)
             else
             {
                 walker->next = CreateNode(readString);
-                walker = NULL;
+                //walker = NULL;
             }
         }
     }
@@ -104,15 +101,15 @@ List *CreateList(FILE *fp)
 // Traverses the list and prints out the string and count for each string.
 List *PrintList(const List *head)
 {
-    List *walker = head;
+    List *walker = (List *)head;
 
     // Traverse list and print values
     while (walker != NULL)
     {
-        printf("%*s %4d ea\n", maxStringSize, walker->str, walker->count);
+        printf("%-*s %4d ea\n", bigStringSize, walker->str, walker->count);
         walker = walker->next;
     }
-    return (const List *)head;
+    return (List *)head;
 }
 
 // Free two malloc cases, node and node's string
@@ -129,4 +126,6 @@ void FreeList(List *head)
         free(temp->str);
         free(temp);
     }
+    free(walker->str);
+    free(walker);
 }
