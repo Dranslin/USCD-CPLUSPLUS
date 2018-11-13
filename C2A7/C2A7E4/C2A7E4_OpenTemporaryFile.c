@@ -12,8 +12,15 @@
  */
 
 #include <fstream>
+#include <stdio.h>
 
 FILE *OpenTemporaryFile(void)
 {
-
+    FILE tempFile = tmpfile();
+    if (tempFile == NULL)
+    {
+        // Fail condition: Alert and exit program.
+        fprintf(stderr, "Temp file failed to open.\n");
+        exit(EXIT_FAILURE);
+    }
 }
