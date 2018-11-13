@@ -1,4 +1,7 @@
 ﻿  C2A2E2_Rotate.cpp
-c:\ucsd\c++ projects\uscd-cplusplus\c2a2\c2a2e2\c2a2e2_rotate.cpp(26): warning C4554: '>>': check operator precedence for possible error; use parentheses to clarify precedence
-c:\ucsd\c++ projects\uscd-cplusplus\c2a2\c2a2e2\c2a2e2_rotate.cpp(32): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
-  C2A2E2.vcxproj -> C:\UCSD\C++ Projects\USCD-CPLUSPLUS\C2A2\Debug\C2A2E2.exe
+c:\users\nick\desktop\ucsd c++\uscd-cplusplus\c2a2\c2a2e2\c2a2e2_rotate.cpp(26): warning C4554: '>>': check operator precedence for possible error; use parentheses to clarify precedence
+c:\users\nick\desktop\ucsd c++\uscd-cplusplus\c2a2\c2a2e2\c2a2e2_rotate.cpp(33): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
+  C2A2E2_main-Driver.cpp
+  C2A2E2_CountIntBitsF.cpp
+  Generating Code...
+  C2A2E2.vcxproj -> C:\Users\nick\Desktop\UCSD C++\USCD-CPLUSPLUS\C2A2\Debug\C2A2E2.exe
