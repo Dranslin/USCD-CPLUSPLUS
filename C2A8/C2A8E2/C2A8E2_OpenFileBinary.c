@@ -1,0 +1,12 @@
+/*
+ * Nicholas Patience U07985691
+ * Nickspatience@gmail.com
+ * C/C++ Programming II : Dynamic Memory and File I/O Concepts
+ * 134312 Ray Mitchell
+ * 11/17/2018
+ * C2A8E2_OpenFileBinary.c
+ * Win 10
+ * Visual C++ 2017
+ *
+ * 
+ */
