@@ -10,3 +10,19 @@
  *
  * 
  */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+FILE *OpenFileBinary(const char *fileName)
+{
+    FILE *source = NULL;
+
+    if ((source = fopen(fileName, "rb")) == NULL)
+    {
+        // Fail condition: Alert and exit program.
+        fprintf(stderr, "File %s failed to open.", fileName);
+        exit(EXIT_FAILURE);
+    }
+    return source;
+}

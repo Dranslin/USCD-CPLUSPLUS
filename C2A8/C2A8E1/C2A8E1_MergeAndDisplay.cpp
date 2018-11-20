@@ -21,6 +21,12 @@ const int MAX_SIZE = 512;
 
 void MergeAndDisplay(ifstream files[], size_t count)
 {
+    if (count == 0)
+    {
+        cerr << "Count value is zero.\n";
+        exit(EXIT_FAILURE);
+    }
+
     char buffer[MAX_SIZE];
     bool allClosed = false;
 

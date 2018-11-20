@@ -10,3 +10,19 @@
  *
  * 
  */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define BYTES_READ 4
+
+void DisplayModifiedSingleReals(FILE *inFile)
+{
+    unsigned char buffer[BYTES_READ];
+
+    while (fread(buffer, sizeof(*buffer), BYTES_READ, inFile) == BYTES_READ)
+    {
+        printf("%s", buffer);
+    }
+
+}

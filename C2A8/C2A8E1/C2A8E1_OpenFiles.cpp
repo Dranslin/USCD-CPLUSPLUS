@@ -48,5 +48,5 @@ ifstream *OpenFiles(char * const fileNames[], size_t count)
         exit(EXIT_FAILURE);
     }
 
-    return (targetFiles);
+    return(targetFiles);
 }
